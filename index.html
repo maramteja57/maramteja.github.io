@@ -1,16 +1,18 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Frontend Developer Portfolio - TxDOTCONNECT System</title>
+    <title>Frontend Developer Portfolio - TxDOT CONNECT System</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <style>
         :root {
-            --primary-color: #0056b3;
-            --secondary-color: #28a745;
+            --primary-color: #003366;
+            --secondary-color: #0066cc;
             --accent-color: #ffc107;
+            --success-color: #28a745;
             --dark-color: #343a40;
             --light-color: #f8f9fa;
         }
@@ -22,12 +24,14 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
             line-height: 1.6;
             color: var(--dark-color);
             overflow-x: hidden;
+            background-color: #f5f5f5;
         }
 
+        /* Hero Section Styles */
         .hero-section {
             background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
             color: white;
@@ -85,6 +89,7 @@
             position: relative;
             display: inline-block;
             margin-bottom: 3rem;
+            color: var(--primary-color);
         }
 
         .section-title::after {
@@ -98,6 +103,7 @@
             border-radius: 2px;
         }
 
+        /* Project Cards */
         .project-card {
             background: white;
             border-radius: 15px;
@@ -118,6 +124,235 @@
             padding: 1.5rem;
         }
 
+        /* TxDOT Visual Components */
+        .section {
+            background: white;
+            padding: 30px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        /* Application Map */
+        .app-map {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 20px;
+            background: #f0f4f8;
+            border-radius: 8px;
+        }
+
+        .capability {
+            background: white;
+            padding: 20px;
+            border-radius: 6px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .capability:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .capability h3 {
+            color: var(--secondary-color);
+            margin-bottom: 10px;
+        }
+
+        /* Swim Lanes */
+        .swim-lanes {
+            display: grid;
+            grid-template-columns: 150px 1fr;
+            gap: 0;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            margin: 20px 0;
+        }
+
+        .lane-header {
+            background: var(--primary-color);
+            color: white;
+            padding: 15px;
+            font-weight: bold;
+        }
+
+        .lane-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 10px;
+            padding: 15px;
+            background: #f9f9f9;
+        }
+
+        .task {
+            background: var(--accent-color);
+            padding: 10px;
+            border-radius: 4px;
+            font-size: 0.9em;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .task.completed {
+            background: var(--success-color);
+            color: white;
+        }
+
+        .task.in-progress {
+            background: #17a2b8;
+            color: white;
+        }
+
+        /* Navigation Mockup */
+        .nav-mockup {
+            display: flex;
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .left-nav {
+            width: 250px;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .nav-section {
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .nav-section-title {
+            background: rgba(255,255,255,0.1);
+            padding: 12px 20px;
+            font-weight: bold;
+            font-size: 0.9em;
+            text-transform: uppercase;
+        }
+
+        .nav-item {
+            padding: 12px 20px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .nav-item:hover {
+            background: rgba(255,255,255,0.1);
+        }
+
+        .nav-item.active {
+            background: var(--secondary-color);
+        }
+
+        .content-area {
+            flex: 1;
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        /* Design System Components */
+        .design-system {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin: 20px 0;
+        }
+
+        .ds-component {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #e0e0e0;
+        }
+
+        .ds-component h4 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .color-palette {
+            display: flex;
+            gap: 10px;
+            margin: 10px 0;
+        }
+
+        .color-swatch {
+            width: 40px;
+            height: 40px;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .buttons-preview {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin: 10px 0;
+        }
+
+        .btn-custom {
+            background: var(--accent-color);
+            color: var(--dark-color);
+            border: none;
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .btn-custom:hover {
+            background: #e0a800;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-primary {
+            background: var(--secondary-color);
+            color: white;
+            padding: 8px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.3s;
+        }
+
+        .btn-primary:hover {
+            background: #0052a3;
+        }
+
+        .btn-secondary {
+            background: #6c757d;
+            color: white;
+            padding: 8px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.3s;
+        }
+
+        .btn-success {
+            background: var(--success-color);
+            color: white;
+            padding: 8px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.3s;
+        }
+
+        /* Skills Section */
         .skill-category {
             background: var(--light-color);
             border-radius: 15px;
@@ -169,6 +404,7 @@
             transition: width 2s ease;
         }
 
+        /* Feature Grid */
         .feature-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -203,43 +439,201 @@
             font-size: 2rem;
         }
 
-        .timeline {
-            position: relative;
-            padding-left: 3rem;
+        /* Table Styles */
+        .table-preview {
+            margin: 20px 0;
+            overflow-x: auto;
         }
 
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 1rem;
-            top: 0;
-            bottom: 0;
-            width: 2px;
-            background: var(--primary-color);
-        }
-
-        .timeline-item {
-            position: relative;
-            margin-bottom: 2rem;
+        table {
+            width: 100%;
+            border-collapse: collapse;
             background: white;
-            padding: 1.5rem;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
 
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: -2.5rem;
-            top: 1.5rem;
-            width: 20px;
-            height: 20px;
-            background: var(--accent-color);
+        th {
+            background: var(--primary-color);
+            color: white;
+            padding: 12px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        td {
+            padding: 12px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        tr:hover {
+            background: #f5f5f5;
+        }
+
+        /* Interactive Comps Grid */
+        .comps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .comp-thumbnail {
+            background: #f0f4f8;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .comp-thumbnail:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-color: var(--secondary-color);
+        }
+
+        .comp-thumbnail h4 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .screen-count {
+            background: var(--secondary-color);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            display: inline-block;
+            margin-top: 10px;
+        }
+
+        /* Notification System */
+        .notification-panel {
+            position: relative;
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            margin: 20px 0;
+        }
+
+        .notification-header {
+            background: var(--primary-color);
+            color: white;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .notification-badge {
+            background: #dc3545;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 12px;
+        }
+
+        .notification-list {
+            max-height: 300px;
+            overflow-y: auto;
+        }
+
+        .notification-item {
+            padding: 15px;
+            border-bottom: 1px solid #e0e0e0;
+            display: flex;
+            align-items: start;
+            gap: 15px;
+            transition: background 0.2s;
+        }
+
+        .notification-item:hover {
+            background: #f5f5f5;
+        }
+
+        .notification-icon {
+            width: 40px;
+            height: 40px;
             border-radius: 50%;
-            border: 3px solid white;
-            box-shadow: 0 0 0 3px var(--primary-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
         }
 
+        .notification-icon.info {
+            background: #e3f2fd;
+            color: #1976d2;
+        }
+
+        .notification-icon.warning {
+            background: #fff3cd;
+            color: #856404;
+        }
+
+        .notification-icon.success {
+            background: #d4edda;
+            color: #155724;
+        }
+
+        /* UTP Table Component */
+        .utp-table {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            margin: 20px 0;
+        }
+
+        .utp-header {
+            background: #f0f4f8;
+            padding: 15px;
+            border-bottom: 1px solid #ddd;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .funding-categories {
+            display: flex;
+            gap: 30px;
+            font-size: 14px;
+            flex-wrap: wrap;
+        }
+
+        .funding-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .funding-amount {
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .group-row {
+            background: #e8f4fd;
+            font-weight: bold;
+            border-left: 4px solid var(--secondary-color);
+        }
+
+        .rank-number {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            background: var(--secondary-color);
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 30px;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        /* CTA Section */
         .cta-section {
             background: linear-gradient(135deg, var(--dark-color) 0%, var(--primary-color) 100%);
             color: white;
@@ -247,24 +641,7 @@
             padding: 4rem 0;
         }
 
-        .btn-custom {
-            background: var(--accent-color);
-            color: var(--dark-color);
-            border: none;
-            padding: 1rem 2rem;
-            border-radius: 50px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: all 0.3s ease;
-        }
-
-        .btn-custom:hover {
-            background: #e0a800;
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-        }
-
+        /* Responsive Design */
         @media (max-width: 768px) {
             .hero-section {
                 text-align: center;
@@ -274,18 +651,31 @@
                 grid-template-columns: 1fr;
             }
             
-            .timeline {
-                padding-left: 2rem;
+            .app-map {
+                grid-template-columns: 1fr;
+            }
+            
+            .nav-mockup {
+                flex-direction: column;
+            }
+            
+            .left-nav {
+                width: 100%;
+            }
+            
+            .funding-categories {
+                flex-direction: column;
+                gap: 10px;
             }
         }
     </style>
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: var(--primary-color);">
         <div class="container">
             <a class="navbar-brand fw-bold" href="#home">
-                <i class="fas fa-code me-2"></i>Frontend Portfolio
+                <i class="fas fa-code me-2"></i>TxDOT CONNECT Portfolio
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
@@ -294,9 +684,9 @@
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#components">Components</a></li>
                     <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
                     <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
                 </ul>
             </div>
@@ -311,7 +701,7 @@
                     <div class="floating-animation">
                         <h1 class="display-3 fw-bold mb-4">
                             Frontend Developer
-                            <span class="d-block text-warning">TxDOTCONNECT System</span>
+                            <span class="d-block text-warning">TxDOT CONNECT System</span>
                         </h1>
                         <p class="lead mb-4">
                             Leading Angular-focused development of Texas Department of Transportation's 
@@ -319,14 +709,14 @@
                             and right of way acquisition processes across the state.
                         </p>
                         <div class="mb-4">
-                            <span class="tech-badge"><i class="fab fa-angular me-2"></i>Angular</span>
+                            <span class="tech-badge"><i class="fab fa-angular me-2"></i>Angular 15+</span>
                             <span class="tech-badge"><i class="fab fa-js-square me-2"></i>ES6+</span>
                             <span class="tech-badge"><i class="fab fa-html5 me-2"></i>HTML5</span>
                             <span class="tech-badge"><i class="fab fa-css3-alt me-2"></i>CSS3</span>
-                            <span class="tech-badge"><i class="fab fa-bootstrap me-2"></i>Bootstrap</span>
+                            <span class="tech-badge"><i class="fab fa-bootstrap me-2"></i>Bootstrap 5</span>
                             <span class="tech-badge"><i class="fas fa-universal-access me-2"></i>WCAG 2.1 AA</span>
                         </div>
-                        <a href="#projects" class="btn btn-custom btn-lg me-3">View Projects</a>
+                        <a href="#components" class="btn btn-custom btn-lg me-3">View Components</a>
                         <a href="#contact" class="btn btn-outline-light btn-lg">Get In Touch</a>
                     </div>
                 </div>
@@ -376,13 +766,335 @@
         </div>
     </section>
 
+    <!-- Visual Components Section -->
+    <section id="components" class="py-5 bg-light">
+        <div class="container">
+            <h1 class="text-center section-title display-4 fw-bold mb-5">TxDOT CONNECT Components</h1>
+            
+            <!-- Application Map -->
+            <div class="section">
+                <h2>Application Architecture Map</h2>
+                <div class="app-map">
+                    <div class="capability">
+                        <h3>Capability A</h3>
+                        <p>Core Planning Module</p>
+                        <small>15 Components</small>
+                    </div>
+                    <div class="capability">
+                        <h3>Capability B</h3>
+                        <p>Project Management</p>
+                        <small>22 Components</small>
+                    </div>
+                    <div class="capability">
+                        <h3>Capability C</h3>
+                        <p>Reporting Suite</p>
+                        <small>18 Components</small>
+                    </div>
+                    <div class="capability">
+                        <h3>Capability D</h3>
+                        <p>Financial Tracking</p>
+                        <small>12 Components</small>
+                    </div>
+                    <div class="capability">
+                        <h3>Capability F</h3>
+                        <p>Resource Planning</p>
+                        <small>16 Components</small>
+                    </div>
+                    <div class="capability">
+                        <h3>Capability G</h3>
+                        <p>Contract Management</p>
+                        <small>20 Components</small>
+                    </div>
+                    <div class="capability">
+                        <h3>Capability H</h3>
+                        <p>Compliance Tracking</p>
+                        <small>14 Components</small>
+                    </div>
+                    <div class="capability">
+                        <h3>Capability M</h3>
+                        <p>UTP Management</p>
+                        <small>35 Components</small>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Interactive Comps Thumbnails -->
+            <div class="section">
+                <h2>Interactive Design Comps in UXPin</h2>
+                <div class="comps-grid">
+                    <div class="comp-thumbnail">
+                        <h4>Capability A</h4>
+                        <p>Planning & Scheduling</p>
+                        <span class="screen-count">24 Screens</span>
+                    </div>
+                    <div class="comp-thumbnail">
+                        <h4>Capability B</h4>
+                        <p>Project Lifecycle</p>
+                        <span class="screen-count">31 Screens</span>
+                    </div>
+                    <div class="comp-thumbnail">
+                        <h4>Capability C</h4>
+                        <p>Reporting Dashboard</p>
+                        <span class="screen-count">18 Screens</span>
+                    </div>
+                    <div class="comp-thumbnail">
+                        <h4>Capability D</h4>
+                        <p>Financial Management</p>
+                        <span class="screen-count">22 Screens</span>
+                    </div>
+                    <div class="comp-thumbnail">
+                        <h4>Capability F</h4>
+                        <p>Resource Allocation</p>
+                        <span class="screen-count">19 Screens</span>
+                    </div>
+                    <div class="comp-thumbnail">
+                        <h4>Capability M</h4>
+                        <p>UTP Workflow</p>
+                        <span class="screen-count">42 Screens</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Sprint Planning Swim Lanes -->
+            <div class="section">
+                <h2>Sprint Planning Swim Lanes</h2>
+                <div class="swim-lanes">
+                    <div class="lane-header">UX Design</div>
+                    <div class="lane-content">
+                        <div class="task completed">Login Page</div>
+                        <div class="task completed">Navigation</div>
+                        <div class="task in-progress">Dashboard</div>
+                        <div class="task">Reports UI</div>
+                        <div class="task">Admin Panel</div>
+                        <div class="task">Settings</div>
+                    </div>
+                </div>
+                <div class="swim-lanes">
+                    <div class="lane-header">Development</div>
+                    <div class="lane-content">
+                        <div class="task completed">API Setup</div>
+                        <div class="task completed">Database</div>
+                        <div class="task completed">Auth System</div>
+                        <div class="task in-progress">Core Features</div>
+                        <div class="task">Integration</div>
+                        <div class="task">Testing</div>
+                    </div>
+                </div>
+                <div class="swim-lanes">
+                    <div class="lane-header">QA Testing</div>
+                    <div class="lane-content">
+                        <div class="task completed">Unit Tests</div>
+                        <div class="task completed">Integration</div>
+                        <div class="task">UI Testing</div>
+                        <div class="task">Performance</div>
+                        <div class="task">Security</div>
+                        <div class="task">UAT</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- UTP Table Component -->
+            <div class="section">
+                <h2>UTP (Unified Transportation Program) Table</h2>
+                <div class="utp-table">
+                    <div class="utp-header">
+                        <h3>District: Houston - FY 2025</h3>
+                        <div class="funding-categories">
+                            <div class="funding-item">
+                                <span>Requested Amount:</span>
+                                <span class="funding-amount">$15,000,000</span>
+                            </div>
+                            <div class="funding-item">
+                                <span>Approved Amount:</span>
+                                <span class="funding-amount">$12,000,000</span>
+                            </div>
+                            <div class="funding-item">
+                                <span>Proposed Amount:</span>
+                                <span class="funding-amount">$13,500,000</span>
+                            </div>
+                        </div>
+                    </div>
+                    <table style="width: 100%;">
+                        <thead>
+                            <tr>
+                                <th style="width: 50px;">Rank</th>
+                                <th>Project ID</th>
+                                <th>Project Name</th>
+                                <th>Type</th>
+                                <th>County</th>
+                                <th>Status</th>
+                                <th>Amount</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="group-row">
+                                <td colspan="7" style="padding: 10px 15px;">Group 1 - Bridge Projects</td>
+                            </tr>
+                            <tr>
+                                <td><span class="rank-number">1</span></td>
+                                <td>BR-2025-001</td>
+                                <td>I-45 Bridge Replacement</td>
+                                <td>Bridge</td>
+                                <td>Harris</td>
+                                <td><span style="color: #28a745;">Approved</span></td>
+                                <td>$3,200,000</td>
+                            </tr>
+                            <tr>
+                                <td><span class="rank-number">2</span></td>
+                                <td>BR-2025-002</td>
+                                <td>Ship Channel Bridge</td>
+                                <td>Bridge</td>
+                                <td>Harris</td>
+                                <td><span style="color: #ffc107;">Under Review</span></td>
+                                <td>$2,800,000</td>
+                            </tr>
+                            <tr class="group-row">
+                                <td colspan="7" style="padding: 10px 15px;">Group 2 - Highway Projects</td>
+                            </tr>
+                            <tr>
+                                <td><span class="rank-number">3</span></td>
+                                <td>HW-2025-001</td>
+                                <td>US 290 Expansion</td>
+                                <td>Highway</td>
+                                <td>Harris</td>
+                                <td><span style="color: #28a745;">Approved</span></td>
+                                <td>$4,500,000</td>
+                            </tr>
+                            <tr>
+                                <td><span class="rank-number">4</span></td>
+                                <td>HW-2025-002</td>
+                                <td>Beltway 8 Improvements</td>
+                                <td>Highway</td>
+                                <td>Harris</td>
+                                <td><span style="color: #0066cc;">In Planning</span></td>
+                                <td>$2,000,000</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <!-- Navigation Design -->
+            <div class="section">
+                <h2>Left Navigation Redesign</h2>
+                <div class="nav-mockup">
+                    <div class="left-nav">
+                        <div class="nav-section">
+                            <div class="nav-section-title">Planning</div>
+                            <div class="nav-item active">Project Dashboard</div>
+                            <div class="nav-item">Create Project</div>
+                            <div class="nav-item">Project List</div>
+                        </div>
+                        <div class="nav-section">
+                            <div class="nav-section-title">Letting</div>
+                            <div class="nav-item">Current Lettings</div>
+                            <div class="nav-item">Schedule</div>
+                            <div class="nav-item">LSM Workflow</div>
+                        </div>
+                        <div class="nav-section">
+                            <div class="nav-section-title">Reports</div>
+                            <div class="nav-item">Financial Reports</div>
+                            <div class="nav-item">Project Status</div>
+                            <div class="nav-item">Custom Reports</div>
+                        </div>
+                        <div class="nav-section">
+                            <div class="nav-section-title">Admin</div>
+                            <div class="nav-item">User Management</div>
+                            <div class="nav-item">Settings</div>
+                            <div class="nav-item">Libraries</div>
+                        </div>
+                    </div>
+                    <div class="content-area">
+                        <h3>Project Dashboard</h3>
+                        <p>Welcome to TxDOT CONNECT. Select an option from the navigation to begin.</p>
+                        <div class="mt-4">
+                            <button class="btn btn-primary">Create New Project</button>
+                            <button class="btn btn-secondary ms-2">View All Projects</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Notification System -->
+            <div class="section">
+                <h2>Notification System Design</h2>
+                <div class="notification-panel">
+                    <div class="notification-header">
+                        <h3>Notifications</h3>
+                        <span class="notification-badge">5 New</span>
+                    </div>
+                    <div class="notification-list">
+                        <div class="notification-item">
+                            <div class="notification-icon info">📋</div>
+                            <div>
+                                <strong>Project Update</strong>
+                                <p style="margin: 5px 0; font-size: 14px; color: #666;">US 290 Expansion project status changed to "Approved"</p>
+                                <small style="color: #999;">2 hours ago</small>
+                            </div>
+                        </div>
+                        <div class="notification-item">
+                            <div class="notification-icon warning">⚠️</div>
+                            <div>
+                                <strong>Deadline Approaching</strong>
+                                <p style="margin: 5px 0; font-size: 14px; color: #666;">Letting submission deadline for BR-2025-003 is in 3 days</p>
+                                <small style="color: #999;">5 hours ago</small>
+                            </div>
+                        </div>
+                        <div class="notification-item">
+                            <div class="notification-icon success">✓</div>
+                            <div>
+                                <strong>Review Completed</strong>
+                                <p style="margin: 5px 0; font-size: 14px; color: #666;">Your LSM workflow has been approved by the district engineer</p>
+                                <small style="color: #999;">1 day ago</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Design System Components -->
+            <div class="section">
+                <h2>Design System Components</h2>
+                <div class="design-system">
+                    <div class="ds-component">
+                        <h4>Color Palette</h4>
+                        <div class="color-palette">
+                            <div class="color-swatch" style="background: #003366;" title="Primary Blue"></div>
+                            <div class="color-swatch" style="background: #0066cc;" title="Link Blue"></div>
+                            <div class="color-swatch" style="background: #28a745;" title="Success Green"></div>
+                            <div class="color-swatch" style="background: #ffc107;" title="Warning Yellow"></div>
+                            <div class="color-swatch" style="background: #dc3545;" title="Error Red"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="ds-component">
+                        <h4>Buttons</h4>
+                        <div class="buttons-preview">
+                            <button class="btn btn-primary">Primary</button>
+                            <button class="btn btn-secondary">Secondary</button>
+                            <button class="btn btn-success">Success</button>
+                        </div>
+                    </div>
+                    
+                    <div class="ds-component">
+                        <h4>Typography</h4>
+                        <p style="font-size: 24px; font-weight: 600; margin: 5px 0;">Heading 1</p>
+                        <p style="font-size: 20px; font-weight: 600; margin: 5px 0;">Heading 2</p>
+                        <p style="font-size: 16px; margin: 5px 0;">Body Text</p>
+                        <p style="font-size: 14px; color: #666; margin: 5px 0;">Caption Text</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Projects Section -->
-    <section id="projects" class="py-5 bg-light">
+    <section id="projects" class="py-5">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center mb-5">
                     <h2 class="section-title display-4 fw-bold">Featured Projects</h2>
-                    <p class="lead">Key components and features of the TxDOTCONNECT system</p>
+                    <p class="lead">Key components and features of the TxDOT CONNECT system</p>
                 </div>
             </div>
             
@@ -522,7 +1234,7 @@
     </section>
 
     <!-- Skills Section -->
-    <section id="skills" class="py-5">
+    <section id="skills" class="py-5 bg-light">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center mb-5">
@@ -697,17 +1409,85 @@
         </div>
     </section>
 
-    <!-- Experience Section -->
-    <section id="experience" class="py-5 bg-light">
+    <!-- Contact Section -->
+    <section id="contact" class="cta-section">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center mb-5">
-                    <h2 class="section-title display-4 fw-bold">Project Timeline</h2>
-                    <p class="lead">Key milestones in TxDOTCONNECT development</p>
-                </div>
+            <h2 class="display-4 fw-bold mb-4">Let's Build Together</h2>
+            <p class="lead mb-4">Looking for a skilled frontend developer to bring your transportation infrastructure project to life?</p>
+            <a href="mailto:contact@example.com" class="btn btn-custom btn-lg">Get In Touch</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container text-center">
+            <p class="mb-0">© 2025 Frontend Developer Portfolio - TxDOT CONNECT System</p>
+            <div class="mt-2">
+                <a href="#" class="text-white me-3"><i class="fab fa-github fa-lg"></i></a>
+                <a href="#" class="text-white me-3"><i class="fab fa-linkedin fa-lg"></i></a>
+                <a href="#" class="text-white"><i class="fab fa-codepen fa-lg"></i></a>
             </div>
-            <div class="row">
-                <div class="col-lg-8 mx-auto">
-                    <div class="timeline">
-                        <div class="timeline-item">
-                            <h5>Angular Migration & Modern
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Progress bar animation on scroll
+        const observerOptions = {
+            threshold: 0.5,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries, observer) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const progressBars = entry.target.querySelectorAll('.progress-fill');
+                    progressBars.forEach(bar => {
+                        const width = bar.style.width;
+                        bar.style.width = '0';
+                        setTimeout(() => {
+                            bar.style.width = width;
+                        }, 100);
+                    });
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.skill-category').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Add active class to navbar on scroll
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+            
+            sections.forEach((section, index) => {
+                const rect = section.getBoundingClientRect();
+                if (rect.top <= 100 && rect.bottom >= 100) {
+                    navLinks.forEach(link => link.classList.remove('active'));
+                    const correspondingLink = document.querySelector(`.navbar-nav .nav-link[href="#${section.id}"]`);
+                    if (correspondingLink) {
+                        correspondingLink.classList.add('active');
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
